@@ -1,0 +1,11 @@
+// local setup
+https://www.mongodb.com/try/download/community
+
+in c drive create one folder data
+C:/data
+
+inside data create folder db
+C:/data/db
+
+//cloud setup
+https://account.mongodb.com/account/login (Signup)

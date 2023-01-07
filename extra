@@ -56,3 +56,47 @@ Extension for vs code
 
 
 > Eval
+///////////////////////////
+NodeJs
+single theard async non blocking I/o
+
+npm > node package manager
+
+JSON
+> JavaScript object notation
+
+/////////////
+package.json
+> Entry point to app
+> meta data (Name,version,description)
+> scripts (start,test,build)
+> package (what all packages used by app)
+
+
+////
+step to generate package.json
+////////////////////////////////
+** NodeJs must be installed in laptop
+> open cmd and go inside the folder
+> npm init
+> answer all questions
+> type "yes" 
+
+////
+step to install package
+////////////////////////////////
+** NodeJs must be installed in laptop
+> open cmd and go inside the folder
+> npm i packagename / npm install packagename
+
+/// Global Package
+nodemon
+> open cmd as admin
+> npm i -g nodemon
+
+
+////////////////////////////////////////////////////////////////
+C > Create > Post
+R > Read   > Get
+U > Update > Put
+D > Delete > Delete
