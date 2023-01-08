@@ -9,3 +9,85 @@ C:/data/db
 
 //cloud setup
 https://account.mongodb.com/account/login (Signup)
+
+
+//////////
+step to start mongodb server
+/////////
+# window
+> open cmd and go inside bin folder
+> cd C:\program Files\mongodb\5.3\server\bin
+> mongod
+(start mongodb server on port 27017)
+** Do not close this cmd if you are using mongodb locally
+
+//////////
+step to start mongodb client
+/////////
+#window
+> open cmd and go inside bin folder
+> cd C:\program Files\mongodb\5.3\server\bin
+> mongo
+(Use to test the query)
+
+
+// SQl  (MySql,Postgress)
+// NoSql (MongoDb, CouchDB)
+
+SQL
+RollNo | Hindi | English | Comp |
+  1    |  80   |         |      |
+  2    |       |   75    |      |
+  3    |  89   |         |  76  |
+
+NoSql(MongoDB)
+[
+    {
+        RollNo:1,
+        Hindi:80
+    },
+    {
+        RollNo:2,
+        English:75
+    },
+    {
+        RollNo:3,
+        Hindi:89,
+        Comp:76
+    }
+]
+
+SQl        Mongo
+Database   Database
+Table      Collection
+Row        Document
+Select     Find
+Insert     Insert
+Delete     Remove
+Update     Update
+
+# To See All Db
+> show dbs
+
+# To go inside Db
+> use databaseName
+
+# To See All Collections
+> show collections
+
+# To Find the record(Find query)
+> db.collectionName.find()
+> db.users.find() (Find data without condition)
+> db.users.find().pretty() // only for cmd
+
+# To Create your DB
+> use databasename
+
+# To Insert record 
+db.users.insert({name:"Nikita"})
+db.users.insert({name:"Amit"})
+db.users.insert({_id:1,name:"Neha"})
+db.users.insert({_id:2,name:"Karan"})
+db.users.insert({name:"Anjlai",city:"Delhi"}) 
+
+mongodb+srv://test:test123@cluster0.f8vmc.mongodb.net/?retryWrites=true&w=majority
