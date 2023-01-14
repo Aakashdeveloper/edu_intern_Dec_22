@@ -100,3 +100,14 @@ C > Create > Post
 R > Read   > Get
 U > Update > Put
 D > Delete > Delete
+
+Params
+> What we pass after /
+> We need to define in the url
+> If define tha should pass
+> Should use for 1 or 2 values only
+QueryParams
+> What we pass after ?
+> No need to define
+> Optional to pass
+> Can pass multiple value
