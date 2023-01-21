@@ -117,3 +117,34 @@ Step to generate react app
 //////
 > open cmd and go inside foler
 > npx create-react-app appname
+
+React is a frontend framework which help to build
+single page application using component based structure
+
+
+//////
+Class component
+> Logical component
+> Use to call api as well as display
+> Can maintain state
+
+Function component
+> dumb component
+> cannot maintain state
+> only use for display purpose
+
+Hooks component
+
+///////
+state
+> Act like a local variable
+> Every component can have its own state
+> We can update the value of state
+> We state update happen component will re-render
+
+Props
+> Help to transfer data between 2 nested components
+> we cannot update value of props
+
+Parent > Child (Props)
+Child > Parent (Props with Callback)
