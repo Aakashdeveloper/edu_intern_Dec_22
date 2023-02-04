@@ -141,6 +141,7 @@ state
 > Every component can have its own state
 > We can update the value of state
 > We state update happen component will re-render
+> Any Data interaction will happen through state only
 
 Props
 > Help to transfer data between 2 nested components
