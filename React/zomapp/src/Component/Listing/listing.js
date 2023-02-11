@@ -3,7 +3,7 @@ import './listing.css';
 import axios from 'axios';
 import ListingDisplay from './LisitingDisplay';
 
-const url = "http://3.17.216.66:4000/restaurant?mealtype_id=1"
+const url = "http://3.17.216.66:4000/restaurant?mealtype_id="
 
 class Listing extends Component {
 
