@@ -2,8 +2,26 @@ import React,{Component} from 'react';
 
 class MenuDisplay extends Component {
     orderID = [];
-    placeOrder = () => {}
-    removeOrder = () => {}
+    placeOrder = (id) => {
+        this.orderID.push(id);
+        this.props.finalOrder(this.orderID)
+    }
+    removeOrder = (id) => {
+        if(this.orderID.indexOf(id) > -1){
+            this.orderID.splice(this.orderID.indexOf(id),1)
+        }
+        this.props.finalOrder(this.orderID)
+    }
+
+    renderCart = (orders) => {
+        if(orders){
+            return orders.map((item,index) => {
+                return(
+                    <b key={index}>{item}&nbsp;</b>
+                )
+            })
+        }
+    }
 
     renderMenu = ({menudata}) => {
         if(menudata){
@@ -36,7 +54,7 @@ class MenuDisplay extends Component {
             <div>
                 <div className="col-md-12 bg-success">
                     <h1>Item Added</h1>
-                    Item Number 
+                    Item Number {this.renderCart(this.orderID)} Added
                 </div>
                 <div className="col-md-12 bg-info">
                     {this.renderMenu(this.props)}

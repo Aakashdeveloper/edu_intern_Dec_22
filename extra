@@ -170,3 +170,9 @@ Child > Parent (Props with Callback)
 (get) allorder>            
        
 (get) restaurants>         http://3.17.216.66:4000/restaurants
+
+
+///////
+open cmd as admin
+> npm i -g json-server
+> json-server --watch order.json --port 2344

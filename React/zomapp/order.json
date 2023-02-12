@@ -1,0 +1,24 @@
+{
+  "orders": [
+    {
+      "id": 5604,
+      "hotel_name": "AMA Cafe",
+      "name": "Ankita",
+      "email": "ankita@gmail.com",
+      "cost": 963,
+      "phone": 987654321,
+      "address": "Hon 876 Pune",
+      "menuItem": "34,32,30,31"
+    },
+    {
+      "id": 9681,
+      "hotel_name": "Chandni Chowk 2 Bangalore",
+      "name": "Ankita",
+      "email": "ankita@gmail.com",
+      "cost": 510.45,
+      "phone": 987654321,
+      "address": "Hon 876 Pune",
+      "menuItem": "65,64,61"
+    }
+  ]
+}
