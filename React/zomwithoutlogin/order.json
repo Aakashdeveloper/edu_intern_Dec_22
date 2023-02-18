@@ -29,16 +29,6 @@
       "phone": 987654321,
       "address": "Hon 876 Pune",
       "menuItem": "34,32"
-    },
-    {
-      "id": 4591,
-      "hotel_name": "AMA Cafe",
-      "name": "Ankita",
-      "email": "ankita@gmail.com",
-      "cost": 275,
-      "phone": 987654321,
-      "address": "Hon 876 Pune",
-      "menuItem": "34"
     }
   ]
 }

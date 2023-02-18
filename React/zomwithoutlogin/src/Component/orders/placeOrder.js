@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import './placeOrder.css';
-import Header from '../Header';
 
 const url = "http://3.17.216.66:4000/menuItem"
 const OrderUrl = "http://localhost:2344/orders";
@@ -58,7 +57,6 @@ class PlaceOrder extends Component{
     render(){
         return(
            <>
-           <Header/>
            <hr/>
             <div className="container">
                 <div className="panel panel-primary">
