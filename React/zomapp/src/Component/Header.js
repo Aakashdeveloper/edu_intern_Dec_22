@@ -16,6 +16,7 @@ class Header extends Component {
 
     handleLogout = () => {
         sessionStorage.removeItem('ltk');
+        sessionStorage.setItem('loginStatus','loggedOut')
         this.setState({userData:''});
         this.props.history.push('/')
     }

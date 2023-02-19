@@ -9,7 +9,7 @@ class Login extends Component{
         super(props)
 
         this.state={
-            email:'ankita@gmail.com',
+            email:'rohini@gmail.com',
             password:'12345678',
             message:''
         }
@@ -34,6 +34,7 @@ class Login extends Component{
                this.setState({message:data.token}) 
             }else{
                 sessionStorage.setItem('ltk',data.token)
+                sessionStorage.setItem('loginStatus','loggedIn')
                 this.props.history.push('/')
             }
         })

@@ -10,13 +10,14 @@ class PlaceOrder extends Component{
     constructor(props){
         super(props)
 
+        let sessionData = sessionStorage.getItem('userInfo')?JSON.parse(sessionStorage.getItem('userInfo')):[]
         this.state={
             id:Math.floor(Math.random() * 10000),
             hotel_name:this.props.match.params.restName,
-            name:'Ankita',
-            email:'ankita@gmail.com',
+            name:sessionData.name,
+            email:sessionData.email,
             cost:0,
-            phone:987654321,
+            phone:sessionData.phone,
             address:'Hon 876 Pune',
             menuItem:''
         }
@@ -51,11 +52,22 @@ class PlaceOrder extends Component{
             },
             body:JSON.stringify(obj)
         })
-        .then(this.props.history.push('/viewBooking'))
+        // .then(this.props.history.push('/viewBooking'))
+        .then(console.log('order placed'))
 
     }
 
     render(){
+        if(sessionStorage.getItem('loginStatus') === 'loggedOut'){
+            return(
+                <>
+                    <Header/>
+                    <center>
+                        <h3>Login First To PlaceOrder</h3>
+                    </center>
+                </>
+            )
+        }
         return(
            <>
            <Header/>
@@ -66,40 +78,43 @@ class PlaceOrder extends Component{
                         <h3>Order for {this.state.hotel_name}</h3>
                     </div>
                     <div className="panel-body">
-                        <input type="hidden" name="cost" value={this.state.cost}/>
-                        <input type="hidden" name="id" value={this.state.id}/>
-                        <input type="hidden" name="hotel_name" value={this.state.hotel_name}/>
-                        <div className="row">
-                            <div className="col-md-6 form-group">
-                                <label for="fname" className='control-label'>FirstName</label>
-                                <input className="form-control" id="fname" name="name" 
-                                value={this.state.name} onChange={this.handleChange}/>
+                        <form action="http://localhost:4100/paynow" method="POST">
+                            <input type="hidden" name="cost" value={this.state.cost}/>
+                            <input type="hidden" name="id" value={this.state.id}/>
+                            <input type="hidden" name="hotel_name" value={this.state.hotel_name}/>
+                            <div className="row">
+                                <div className="col-md-6 form-group">
+                                    <label for="fname" className='control-label'>FirstName</label>
+                                    <input className="form-control" id="fname" name="name" 
+                                    value={this.state.name} onChange={this.handleChange}/>
+                                </div>
+                                <div className="col-md-6 form-group">
+                                    <label for="email" className='control-label'>Email</label>
+                                    <input className="form-control" id="email" name="email" 
+                                    value={this.state.email} onChange={this.handleChange}/>
+                                </div>
+                                <div className="col-md-6 form-group">
+                                    <label for="phone" className='control-label'>Phone</label>
+                                    <input className="form-control" id="phone" name="phone" 
+                                    value={this.state.phone} onChange={this.handleChange}/>
+                                </div>
+                                <div className="col-md-6 form-group">
+                                    <label for="address" className='control-label'>Address</label>
+                                    <input className="form-control" id="address" name="address" 
+                                    value={this.state.address} onChange={this.handleChange}/>
+                                </div>
                             </div>
-                            <div className="col-md-6 form-group">
-                                <label for="email" className='control-label'>Email</label>
-                                <input className="form-control" id="email" name="email" 
-                                value={this.state.email} onChange={this.handleChange}/>
+                            {this.renderItem(this.state.menuItem)}
+                            <div className='row'>
+                                <div className="col-md-12">
+                                    <h2>Total Price is Rs.{this.state.cost}</h2>
+                                </div>
                             </div>
-                            <div className="col-md-6 form-group">
-                                <label for="phone" className='control-label'>Phone</label>
-                                <input className="form-control" id="phone" name="phone" 
-                                value={this.state.phone} onChange={this.handleChange}/>
-                            </div>
-                            <div className="col-md-6 form-group">
-                                <label for="address" className='control-label'>Address</label>
-                                <input className="form-control" id="address" name="address" 
-                                value={this.state.address} onChange={this.handleChange}/>
-                            </div>
-                        </div>
-                        {this.renderItem(this.state.menuItem)}
-                        <div className='row'>
-                            <div className="col-md-12">
-                                <h2>Total Price is Rs.{this.state.cost}</h2>
-                            </div>
-                        </div>
-                        <button className="btn btn-success" onClick={this.Checkout}>
-                            PlaceOrder
-                        </button>
+                            <button className="btn btn-success" onClick={this.Checkout}
+                            type="submit">
+                                PlaceOrder
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
