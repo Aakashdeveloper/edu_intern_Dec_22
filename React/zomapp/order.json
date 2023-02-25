@@ -25,6 +25,23 @@
       "status": "TXN_SUCCESS",
       "date": "2023-02-19%2014:40:56.0",
       "bank_name": "Axis%20Bank"
+    },
+    {
+      "id": 965,
+      "hotel_name": "Street Foods By Punjab Grill",
+      "cost": 318,
+      "address": "Hon 876 Pune",
+      "menuItem": "36,39"
+    },
+    {
+      "id": 2832,
+      "hotel_name": "Chandni Chowk 2 Bangalore",
+      "name": "Rohini",
+      "email": "rohini@gmail.com",
+      "cost": 405.9,
+      "phone": "9876543212",
+      "address": "Hon 876 Pune",
+      "menuItem": "63,65,64"
     }
   ]
 }
